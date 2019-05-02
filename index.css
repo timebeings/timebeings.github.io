@@ -46,17 +46,17 @@ label {
 }
 
 .twbs .btn-primary {
-  background-color: #926677;
-  border-color: #926677;
+  background-color: #546b46;
+  border-color: #546b46;
 }
 
 .twbs .btn-primary:hover {
-  background-color: #704a53;
-  border-color: #704a53;
+  background-color: #263f17;
+  border-color: #263f17;
 }
 
 .twbs .bg-primary {
-  background-color: #926677 !important;
+  background-color: #546b46 !important;
 }
 
 .twbs .bg-primary p {
@@ -98,3 +98,5 @@ label {
 /* nice green 97b685 */
 /* nice green dark 557940 */
 /* nice green darker 3c6424 */
+
+/* nice green 546b46 */
