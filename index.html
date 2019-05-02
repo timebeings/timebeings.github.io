@@ -16,84 +16,69 @@
       To begin development, run `npx servor` from the project root
     -->
   </head>
-  <body class="container">
-    <link
-      rel="stylesheet"
-      href="https://timebeings.github.io/namespaced-bootstrap.min.css"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://timebeings.github.io/index.css" />
+  <body class="twbs">
+    <div class="container">
+      <!-- Copy This -->
 
-    <script type="module">
-      import {
-        React,
-        ReactDOM
-      } from "https://unpkg.com/es-react@16.8.30/index.js";
-      import htm from "https://unpkg.com/htm@2.1.1/dist/htm.mjs";
-      import csz from "https://unpkg.com/csz@0.1.2/index.js";
-      import Calculator from "https://timebeings.github.io/calculator.js";
+      <link
+        rel="stylesheet"
+        href="https://timebeings.github.io/namespaced-bootstrap.min.css"
+        crossorigin="anonymous"
+      />
+      <!-- <link rel="stylesheet" href="https://timebeings.github.io/index.css" /> -->
+      <!-- <script type="module" src="https://timebeings.github.io"></script> -->
+      <div id="root" class="twbs"></div>
 
-      window.React = React;
-      window.css = csz;
-      window.html = htm.bind(React.createElement);
-      const App = () =>
-        html`
-          <${Calculator} />
-        `;
+      <!-- Copy That ^ -->
 
-      ReactDOM.render(
-        html`
-          <${App}>footer content here<//>
-        `,
-        document.getElementById("root")
-      );
-    </script>
-    <div id="root" class="twbs"></div>
+      <script type="module" src="./index.js"></script>
+      <link rel="stylesheet" href="./index.css" />
 
-    <form id="form01" method="post">
-      <div class="inner">
-        <div class="field">
-          <input
-            type="text"
-            name="name"
-            id="form01-name"
-            placeholder="Name"
-            maxlength="128"
-            required=""
-          />
+      <form id="form01" method="post">
+        <div class="inner">
+          <div class="field">
+            <input
+              type="text"
+              name="name"
+              id="form01-name"
+              placeholder="Name"
+              maxlength="128"
+              required=""
+            />
+          </div>
+          <div class="field">
+            <input
+              type="email"
+              name="email"
+              id="form01-email"
+              placeholder="Email"
+              maxlength="128"
+              required=""
+            />
+          </div>
+          <div class="field" style="display: none;">
+            <input
+              type="text"
+              name="data-url"
+              id="form01-data-url"
+              placeholder="Data Url"
+              maxlength="128"
+              disabled=""
+            />
+          </div>
+          <div class="field">
+            <textarea
+              name="message"
+              id="form01-message"
+              placeholder="Message"
+              maxlength="16384"
+              required=""
+            ></textarea>
+          </div>
+          <div class="actions"><button type="submit">Send</button></div>
         </div>
-        <div class="field">
-          <input
-            type="email"
-            name="email"
-            id="form01-email"
-            placeholder="Email"
-            maxlength="128"
-            required=""
-          />
-        </div>
-        <div class="field" style="display: none;">
-          <input
-            type="text"
-            name="data-url"
-            id="form01-data-url"
-            placeholder="Data Url"
-            maxlength="128"
-            disabled=""
-          />
-        </div>
-        <div class="field">
-          <textarea
-            name="message"
-            id="form01-message"
-            placeholder="Message"
-            maxlength="16384"
-            required=""
-          ></textarea>
-        </div>
-        <div class="actions"><button type="submit">Send</button></div>
-      </div>
-      <input type="hidden" name="id" value="form01" />
-    </form>
+        <input type="hidden" name="id" value="form01" />
+      </form>
+    </div>
   </body>
 </html>
