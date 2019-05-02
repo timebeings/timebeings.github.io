@@ -26,11 +26,6 @@ label {
   cursor: pointer;
 }
 
-.twbs h3 {
-  margin-top: 40px;
-  font-weight: 300;
-}
-
 .twbs p {
   font-weight: 300;
 }
@@ -40,10 +35,11 @@ label {
   font-family: "Source Sans Pro", sans-serif;
 }
 .twbs h3 {
+  margin-top: 40px;
+  font-weight: 300;
   letter-spacing: -0.05rem;
   font-size: 1.75em;
   line-height: 1.25;
-  font-weight: 400;
   color: #23253b;
   margin-bottom: 20px;
   margin-top: 40px;
@@ -67,10 +63,15 @@ label {
   color: #fff;
 }
 
+.twbs .btn {
+  font-weight: 300;
+}
+
 .twbs .nav-tabs {
   font-size: 38px;
   margin: 25px 0;
   cursor: pointer;
+  font-weight: 300;
 }
 
 .twbs .nav-tabs .nav-link.active {
