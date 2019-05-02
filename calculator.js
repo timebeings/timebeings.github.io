@@ -7,28 +7,28 @@ export default () => {
     {
       type: "Wood",
       selected: true,
-      img: "./img/wood.png",
+      img: "https://timebeings.github.io/img/wood.png",
       description:
         "Less suction is required to clean wooden floors which means that the vacuums can be cheaper."
     },
     {
       type: "Carpet",
       selected: false,
-      img: "./img/carpet.png",
+      img: "https://timebeings.github.io/img/carpet.png",
       description:
         "With more surface area for dust to hide, carpets require a more powerful vacuum"
     },
     {
       type: "Mixture",
       selected: false,
-      img: "./img/mix-floor.png",
+      img: "https://timebeings.github.io/img/mix-floor.png",
       description:
         "e.g. Wooden floors with rugs or some rooms carpeted and others not"
     },
     {
       type: "Other",
       selected: false,
-      img: "./img/other.png",
+      img: "https://timebeings.github.io/img/other.png",
       description: "e.g. Tiles, Laments or concrete flooring"
     }
   ]);
