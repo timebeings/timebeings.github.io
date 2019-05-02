@@ -312,7 +312,7 @@ export default () => {
           </div>
 
           <div>
-            <p>
+            <p class="intro">
               Click here to see our recommended robot
             </p>
             <button

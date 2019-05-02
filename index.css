@@ -41,17 +41,17 @@ label {
 }
 
 .twbs .btn-primary {
-  background-color: #97b685;
-  border-color: #97b685;
+  background-color: #926677;
+  border-color: #926677;
 }
 
 .twbs .btn-primary:hover {
-  background-color: #557940;
-  border-color: #557940;
+  background-color: #704a53;
+  border-color: #704a53;
 }
 
 .twbs .bg-primary {
-  background-color: #97b685 !important;
+  background-color: #926677 !important;
 }
 
 .twbs .bg-primary p {
@@ -75,10 +75,13 @@ label {
 
 .card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  /* background-color: #704a53 !important; */
 }
 
 /* background-color: #23253B; */
 /* nice red 926677 */
+/* nice dark 300a13 */
+/* nice red light 704a53 */
 /* 575975 */
 /* FFBC6b */
 /* BF8B98 -really like*/
