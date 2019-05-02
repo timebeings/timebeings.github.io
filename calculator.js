@@ -1,3 +1,6 @@
+// import Logo from "../../components/logo.js";
+// const styles = css`/routes/home/index.css`;
+
 export default () => {
   // Declare a new state variable, which we'll call "count"
   const [showVacuum, setShowVacuum] = window.React.useState(true);
@@ -7,28 +10,28 @@ export default () => {
     {
       type: "Wood",
       selected: true,
-      img: "https://timebeings.github.io/img/wood.png",
+      img: "./img/wood.png",
       description:
         "Less suction is required to clean wooden floors which means that the vacuums can be cheaper."
     },
     {
       type: "Carpet",
       selected: false,
-      img: "https://timebeings.github.io/img/carpet.png",
+      img: "./img/carpet.png",
       description:
         "With more surface area for dust to hide, carpets require a more powerful vacuum"
     },
     {
       type: "Mixture",
       selected: false,
-      img: "https://timebeings.github.io/img/mix-floor.png",
+      img: "./img/mix-floor.png",
       description:
         "e.g. Wooden floors with rugs or some rooms carpeted and others not"
     },
     {
       type: "Other",
       selected: false,
-      img: "https://timebeings.github.io/img/other.png",
+      img: "./img/other.png",
       description: "e.g. Tiles, Laments or concrete flooring"
     }
   ]);
@@ -138,24 +141,23 @@ export default () => {
   return html`
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a
+        <span
           class=${showVacuum ? "nav-link active" : "nav-link"}
-          href="#"
           onClick=${() => {
             setShowVacuum(true);
             setShowOther(false);
           }}
-          >Vacuum</a
+          >Vacuum</span
         >
       </li>
       <li class="nav-item">
-        <a
+        <span
           class=${showOther ? "nav-link active" : "nav-link"}
           onClick=${() => {
             setShowVacuum(false);
             setShowOther(true);
           }}
-          >Other Robots</a
+          >Other Robots</span
         >
       </li>
     </ul>
@@ -167,10 +169,7 @@ export default () => {
           the robot vacuum cleaner that is right for you.
         </p>
         <h3>What type of flooring do you have in your property?</h3>
-        <p>
-          Some robot vacuum cleaners are more suited to hard wood floors and
-          others are good at everything.
-        </p>
+
         <div class="card-deck">
           ${floorTypes.map(floor => {
             return html`
@@ -238,9 +237,7 @@ export default () => {
         </div>
 
         <h3>Do you have a dog or cat?</h3>
-        <p>
-          Certain robots specialise in pet hair removal.
-        </p>
+
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label
             class=${hasPets ? "btn btn-primary btn-lg" : "btn btn-light btn-lg"}
@@ -275,9 +272,7 @@ export default () => {
         </div>
 
         <h3>How many bedrooms does your home have?</h3>
-        <p>
-          The larger your home the more powerful vacuum we recommend
-        </p>
+
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           ${numberOfBedrooms.map(bed => {
             return html`
