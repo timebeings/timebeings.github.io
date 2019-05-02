@@ -1,6 +1,3 @@
-// import Logo from "../../components/logo.js";
-// const styles = css`/routes/home/index.css`;
-
 export default () => {
   // Declare a new state variable, which we'll call "count"
   const [showVacuum, setShowVacuum] = window.React.useState(true);

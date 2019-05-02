@@ -1,11 +1,98 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Hello</title>
-</head>
-<body>
-  <h1>Hello world</h1>
+  <head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://timebeings.github.io/lib/namespaced-bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/index.css" />
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-</body>
+      You can add webfonts, meta tags, or analytics to this file.
+
+      To begin development, run `npx servor` from the project root
+    -->
+  </head>
+  <body>
+    <script type="module">
+      import {
+        React,
+        ReactDOM
+      } from "https://unpkg.com/es-react@16.8.30/index.js";
+      import htm from "https://unpkg.com/htm@2.1.1/dist/htm.mjs";
+      import csz from "https://unpkg.com/csz@0.1.2/index.js";
+      import Calculator from "https://timebeings.github.io/calculator.js";
+
+      window.React = React;
+      window.css = csz;
+      window.html = htm.bind(React.createElement);
+      const App = () =>
+        html`
+          <${Calculator} />
+        `;
+
+      ReactDOM.render(
+        html`
+          <${App}>footer content here<//>
+        `,
+        document.getElementById("root")
+      );
+    </script>
+    <div id="root" class="twbs"></div>
+
+    <form id="form01" method="post">
+      <div class="inner">
+        <div class="field">
+          <input
+            type="text"
+            name="name"
+            id="form01-name"
+            placeholder="Name"
+            maxlength="128"
+            required=""
+          />
+        </div>
+        <div class="field">
+          <input
+            type="email"
+            name="email"
+            id="form01-email"
+            placeholder="Email"
+            maxlength="128"
+            required=""
+          />
+        </div>
+        <div class="field" style="display: none;">
+          <input
+            type="text"
+            name="data-url"
+            id="form01-data-url"
+            placeholder="Data Url"
+            maxlength="128"
+            disabled=""
+          />
+        </div>
+        <div class="field">
+          <textarea
+            name="message"
+            id="form01-message"
+            placeholder="Message"
+            maxlength="16384"
+            required=""
+          ></textarea>
+        </div>
+        <div class="actions"><button type="submit">Send</button></div>
+      </div>
+      <input type="hidden" name="id" value="form01" />
+    </form>
+  </body>
 </html>
