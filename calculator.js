@@ -164,7 +164,7 @@ export default () => {
 
     ${showVacuum &&
       html`
-        <div class="container">
+        <div class="calculator">
           <p class="intro">
             Fill out four quick questions about your home and we will suggest
             the best robot for you.
@@ -413,7 +413,7 @@ export default () => {
       `}
     ${showOther &&
       html`
-        <div class="container">
+        <div class="calculator">
           <p>
             We are working hard to be able to recommend other types of robots.
           </p>
