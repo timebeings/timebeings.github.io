@@ -53,7 +53,7 @@ export default () => {
     {
       name: "Eufy RoboVac 11",
       description: "Perfect for hardfloors and thin carpets.",
-      img: "./img/robot/eufy-robovac-11.png",
+      img: "https://timebeings.github.io/img/robot/eufy-robovac-11.png",
       description: "Perfect for hardfloors and thin carpets.",
       features: "Features: 1, 2, 3",
       price: "10"
