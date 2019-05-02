@@ -28,6 +28,11 @@ label {
 
 .twbs h3 {
   margin-top: 40px;
+  font-weight: 300;
+}
+
+.twbs p {
+  font-weight: 300;
 }
 
 .twbs {
