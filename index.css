@@ -46,17 +46,23 @@ label {
 }
 
 .twbs .btn-primary {
-  background-color: #546b46;
-  border-color: #546b46;
+  background-color: #509972;
+  border-color: #509972;
 }
 
-.twbs .btn-primary:hover {
-  background-color: #263f17;
-  border-color: #263f17;
+.twbs .btn-primary:hover,
+.twbs .btn-primary:focus {
+  background-color: #3e7759;
+  border-color: #3e7759;
 }
 
 .twbs .bg-primary {
-  background-color: #546b46 !important;
+  background-color: #509972 !important;
+}
+
+.twbs .bg-primary:hover,
+.twbs .bg-primary:focus {
+  background-color: #3e7759 !important;
 }
 
 .twbs .bg-primary p {
@@ -125,4 +131,4 @@ label {
 /* nice green dark 557940 */
 /* nice green darker 3c6424 */
 
-/* nice green 546b46 */
+/* nice green 509972 */
