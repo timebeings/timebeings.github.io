@@ -26,7 +26,6 @@ export default () => {
       type: "Mixture",
       selected: false,
       img: "https://timebeings.github.io/img/mix-floor.png"
-      // description:
       //   "e.g. Wooden floors with rugs or some rooms carpeted and others not"
     },
     {
