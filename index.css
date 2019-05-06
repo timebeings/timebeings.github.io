@@ -104,6 +104,16 @@ label {
   border: 1px solid #e9ecef;
 }
 
+.twbs .handheld-img {
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.twbs .btn-handheld {
+  margin: 12px auto 20px;
+}
+
 /* background-color: #23253B; */
 /* nice red 926677 */
 /* nice dark 300a13 */

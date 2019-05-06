@@ -86,15 +86,13 @@ export default () => {
     {
       name: "Dyson v8 Animal",
       img: "https://timebeings.github.io/img/handheld/dyson-v8-animal.png",
-      description: "",
-      features: "Features: 1, 2, 3",
+      description: "Lightweight handheld vacuum",
       price: "15"
     },
     {
       name: "Dyson v7 Trigger",
       img: "https://timebeings.github.io/img/handheld/dyson-v7-trigger.png",
-      description: "",
-      features: "Features: 1, 2, 3",
+      description: "Lightweight handheld vacuum",
       price: "10"
     }
   ];
@@ -132,7 +130,7 @@ export default () => {
       ...robotVacuums[robotRecommendation],
       ...(hasStairs ? { handheld: handheldVacuums[hasPets ? 0 : 1] } : {})
     });
-    window.scroll(0, window.scrollY + 100);
+    window.scroll(0, window.scrollY + 300);
   };
 
   return html`
@@ -396,7 +394,7 @@ export default () => {
                             <div class="col-md-4">
                               <img
                                 src=${result.handheld.img}
-                                class="card-img"
+                                class="card-img handheld-img"
                                 alt="..."
                               />
                             </div>
@@ -406,18 +404,34 @@ export default () => {
                                   ${result.handheld.name}
                                 </h5>
                                 <p class="card-text">
-                                  ${result.description}
-                                </p>
-                                <p class="card-text">
-                                  ${result.handheld.features}
+                                  ${result.handheld.description}
                                 </p>
                                 <p class="card-text">
                                   Available now for
-                                  <strong>£${result.handheld.price}</strong> a
+                                  <strong> £${result.handheld.price}</strong> a
                                   month through our subscription service.
                                 </p>
                               </div>
                             </div>
+
+                            <button
+                              type="button"
+                              class="btn btn-primary btn-lg btn-handheld"
+                              onClick=${() => {
+                                document.getElementById(
+                                  "form01-message"
+                                ).value =
+                                  "Hi Time Beings, I am interested in starting a subscription for the " +
+                                  result.name +
+                                  " robot vacuum cleaner and the " +
+                                  result.handheld.name +
+                                  "handheld vacuum.";
+
+                                window.location.href = "#" + "form01";
+                              }}
+                            >
+                              Add to your subscription
+                            </button>
                           </div>
                         </div>
                       </div>
