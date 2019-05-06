@@ -53,18 +53,19 @@ export default () => {
   const robotVacuums = [
     {
       name: "Eufy RoboVac 11",
-      description: "Perfect for hardfloors and thin carpets.",
+      description: "Perfect for hard floors and thin carpets.",
       img: "https://timebeings.github.io/img/robot/eufy-robovac-11.png",
-      description: "Perfect for hardfloors and thin carpets.",
-      features: "Features: 1, 2, 3",
+      features:
+        "Remote controlled, Simple to maintain and at 7.8cm in height it can go under most furniture",
       price: "10"
     },
     {
       name: "Neato Botvac Connected D6",
       description: "",
-      img: "",
+      img: "https://timebeings.github.io/img/robot/neato-botvac-d6.png",
       description: "",
-      features: "Features: 1, 2, 3",
+      features:
+        "Designed for homes with pets, smart navigation that creates floor plans, smartphone app to schedule cleaning",
       price: "25"
     },
     {
@@ -363,9 +364,12 @@ export default () => {
                             <p class="card-text">
                               ${result.description}
                             </p>
-                            <p class="card-text">${result.features}</p>
                             <p class="card-text">
-                              Avaialble now for £${result.price} a month through
+                              <strong>Features: </strong>${result.features}
+                            </p>
+                            <p class="card-text">
+                              Available now for
+                              <strong> £${result.price}</strong> a month through
                               our subscription service.
                             </p>
                             <button
@@ -375,18 +379,15 @@ export default () => {
                                 document.getElementById(
                                   "form01-message"
                                 ).value =
-                                  "please hook me up with one of your robots";
+                                  "Hi Time Beings, I am interested in starting a subscription for the " +
+                                  result.name +
+                                  " robot vacuum cleaner.";
 
                                 window.location.href = "#" + "form01";
                               }}
                             >
-                              order now
+                              Get started with our subscription
                             </button>
-                            <p class="card-text">
-                              <small class="text-muted"
-                                >Last updated 3 mins ago</small
-                              >
-                            </p>
                           </div>
                         </div>
                       </div>
@@ -417,13 +418,9 @@ export default () => {
                                   ${result.handheld.features}
                                 </p>
                                 <p class="card-text">
-                                  Avaialble now for £${result.handheld.price} a
+                                  Available now for
+                                  <strong>£${result.handheld.price}</strong> a
                                   month through our subscription service.
-                                </p>
-                                <p class="card-text">
-                                  <small class="text-muted"
-                                    >Last updated 3 mins ago</small
-                                  >
                                 </p>
                               </div>
                             </div>
