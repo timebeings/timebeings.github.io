@@ -186,6 +186,7 @@ export default () => {
                     });
 
                     setSelectedFloorTypes(newFloorTypes);
+                    setShowResult(false);
                   }}
                 >
                   <img src=${floor.img} class="card-img-top" alt="..." />
@@ -212,6 +213,7 @@ export default () => {
                 checked=${hasStairs}
                 onClick=${() => {
                   setHasStairs(true);
+                  setShowResult(false);
                 }}
               />
               Yes
@@ -229,6 +231,7 @@ export default () => {
                 checked=${!hasStairs}
                 onClick=${() => {
                   setHasStairs(false);
+                  setShowResult(false);
                 }}
               />
               No
@@ -251,6 +254,7 @@ export default () => {
                 checked=${hasPets}
                 onClick=${() => {
                   setHasPets(true);
+                  setShowResult(false);
                 }}
               />
               Yes
@@ -268,6 +272,7 @@ export default () => {
                 checked=${!hasPets}
                 onClick=${() => {
                   setHasPets(false);
+                  setShowResult(false);
                 }}
               />
               No
@@ -299,6 +304,7 @@ export default () => {
                       });
 
                       setNumberOfBedrooms(newNumberOfBeds);
+                      setShowResult(false);
                     }}
                   />
                   ${bed.number}
@@ -378,7 +384,7 @@ export default () => {
                                 window.location.href = "#" + "form01";
                               }}
                             >
-                              Get started with our subscription
+                              Get started
                             </button>
                           </div>
                         </div>
