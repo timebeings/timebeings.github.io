@@ -137,6 +137,7 @@ export default () => {
       ...robotVacuums[robotRecommendation],
       ...(hasStairs ? { handheld: handheldVacuums[hasPets ? 0 : 1] } : {})
     });
+    window.scroll(0, window.innerHeight + 100);
   };
 
   return html`
