@@ -3,7 +3,7 @@
 
 export default () => {
   // Declare a new state variable, which we'll call "count"
-  const [showVacuum, setShowVacuum] = window.React.useState(false);
+  const [showVacuum, setShowVacuum] = window.React.useState(true);
   const [showOther, setShowOther] = window.React.useState(false);
 
   const [floorTypes, setSelectedFloorTypes] = window.React.useState([
@@ -137,7 +137,7 @@ export default () => {
       ...robotVacuums[robotRecommendation],
       ...(hasStairs ? { handheld: handheldVacuums[hasPets ? 0 : 1] } : {})
     });
-    window.scroll(0, window.innerHeight + 100);
+    window.scroll(0, window.scrollY + 100);
   };
 
   return html`
@@ -338,8 +338,8 @@ export default () => {
                     html`
                       <p>
                         You have told us that your property has stairs.
-                        Unfortunately robot vacuum cleaners cannot yet clean the
-                        stairs.
+                        Unfortunately robot vacuum cleaners cannot clean the
+                        stairs yet.
                       </p>
                       <p>
                         Therefore we also recommend
