@@ -3,7 +3,7 @@
 
 export default () => {
   // Declare a new state variable, which we'll call "count"
-  const [showVacuum, setShowVacuum] = window.React.useState(true);
+  const [showVacuum, setShowVacuum] = window.React.useState(false);
   const [showOther, setShowOther] = window.React.useState(false);
 
   const [floorTypes, setSelectedFloorTypes] = window.React.useState([
@@ -157,7 +157,7 @@ export default () => {
             setShowVacuum(false);
             setShowOther(true);
           }}
-          >Other Robots</span
+          >Other</span
         >
       </li>
     </ul>
@@ -415,7 +415,8 @@ export default () => {
       html`
         <div class="calculator">
           <p>
-            We are working hard to be able to recommend other types of robots.
+            We are currently working hard to bring you recommendations for other
+            types of robots.
           </p>
           <p>
             If you are interested in lawn mowing, mopping or window cleaning
