@@ -56,31 +56,28 @@ export default () => {
       description: "Perfect for hard floors and thin carpets.",
       img: "https://timebeings.github.io/img/robot/eufy-robovac-11.png",
       features:
-        "Remote controlled, Simple to maintain and at 7.8cm in height it can go under most furniture",
+        "Remote controlled, Simple to maintain and at 7.8cm in height it can go under most furniture.",
       price: "10"
     },
     {
       name: "Neato Botvac Connected D6",
       description: "",
       img: "https://timebeings.github.io/img/robot/neato-botvac-d6.png",
-      description: "",
       features:
-        "Designed for homes with pets, smart navigation that creates floor plans, smartphone app to schedule cleaning",
+        "Designed for homes with pets, smart navigation that creates floor plans, smartphone app to schedule cleaning.",
       price: "25"
     },
     {
       name: "Dyson 360 Eye",
       description: "",
-      img: "",
-      description: "",
+      img: "https://timebeings.github.io/img/robot/dyson-360-eye.png",
       features: "Features: 1, 2, 3",
       price: "35"
     },
     {
       name: "Eufy RoboVac 30C",
       description: "",
-      img: "",
-      description: "",
+      img: "https://timebeings.github.io/img/robot/eufy-robovac-30.png",
       features: "Features: 1, 2, 3",
       price: "12"
     }
@@ -89,16 +86,14 @@ export default () => {
   const handheldVacuums = [
     {
       name: "Dyson v8 Animal",
-      description: "",
-      img: "",
+      img: "https://timebeings.github.io/img/handheld/dyson-v8-animal.png",
       description: "",
       features: "Features: 1, 2, 3",
       price: "15"
     },
     {
       name: "Dyson v7 Trigger",
-      description: "",
-      img: "",
+      img: "https://timebeings.github.io/img/handheld/dyson-v7-trigger.png",
       description: "",
       features: "Features: 1, 2, 3",
       price: "10"
