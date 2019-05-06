@@ -10,29 +10,30 @@ export default () => {
     {
       type: "Wood",
       selected: true,
-      img: "https://timebeings.github.io/img/wood.png",
-      description:
-        "Less suction is required to clean wooden floors which means that the vacuums can be cheaper."
+      img: "https://timebeings.github.io/img/wood.png"
+      // description:
+      // // "Robots have to work a little less hard on wooden"
+      //   // "Less suction is required to clean wooden floors which means that the vacuums can be cheaper."
     },
     {
       type: "Carpet",
       selected: false,
-      img: "https://timebeings.github.io/img/carpet.png",
-      description:
-        "With more surface area for dust to hide, carpets require a more powerful vacuum"
+      img: "https://timebeings.github.io/img/carpet.png"
+      // description:
+      //   "With more surface area for dust to hide, carpets require a more powerful vacuum"
     },
     {
       type: "Mixture",
       selected: false,
-      img: "https://timebeings.github.io/img/mix-floor.png",
-      description:
-        "e.g. Wooden floors with rugs or some rooms carpeted and others not"
+      img: "https://timebeings.github.io/img/mix-floor.png"
+      // description:
+      //   "e.g. Wooden floors with rugs or some rooms carpeted and others not"
     },
     {
       type: "Other",
       selected: false,
-      img: "https://timebeings.github.io/img/other.png",
-      description: "e.g. Tiles, Laments or concrete flooring"
+      img: "https://timebeings.github.io/img/other.png"
+      // description: "e.g. Tiles, Laments or concrete flooring"
     }
   ]);
 
@@ -41,7 +42,7 @@ export default () => {
 
   const [numberOfBedrooms, setNumberOfBedrooms] = window.React.useState([
     { number: 1, selected: false },
-    { number: 2, selected: false },
+    { number: 2, selected: true },
     { number: 3, selected: false },
     { number: "4+", selected: false }
   ]);
@@ -139,7 +140,11 @@ export default () => {
   };
 
   return html`
-    <ul class="nav nav-tabs">
+    <ul
+      class=${!showVacuum && !showOther
+        ? "nav nav-tabs nav-tabs-close"
+        : "nav nav-tabs"}
+    >
       <li class="nav-item">
         <span
           class=${showVacuum ? "nav-link active" : "nav-link"}
@@ -166,8 +171,8 @@ export default () => {
       html`
         <div class="calculator">
           <p class="intro">
-            Fill out four quick questions about your home and we will suggest
-            the best robot for you.
+            To help us recommend the right robot for you please fill out these
+            four quick questions.
           </p>
           <h3>What type of flooring do you have in your property?</h3>
 
@@ -192,16 +197,13 @@ export default () => {
                   <img src=${floor.img} class="card-img-top" alt="..." />
                   <div class="card-body">
                     <h5 class="card-title">${floor.type}</h5>
-                    <p class="card-text">
-                      ${floor.description}
-                    </p>
                   </div>
                 </div>
               `;
             })}
           </div>
 
-          <h3>Does your property have stairs?</h3>
+          <h3>Are there stairs in your property?</h3>
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label
               class=${hasStairs
@@ -278,7 +280,7 @@ export default () => {
             </label>
           </div>
 
-          <h3>How many bedrooms does your home have?</h3>
+          <h3>How many bedrooms does your property have?</h3>
 
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
             ${numberOfBedrooms.map(bed => {
@@ -311,10 +313,7 @@ export default () => {
             })}
           </div>
 
-          <div>
-            <p class="intro">
-              Click here to see our recommended robot
-            </p>
+          <div class="submit">
             <button
               type="button"
               class="btn btn-primary btn-lg"
@@ -323,90 +322,115 @@ export default () => {
                 setShowResult(true);
               }}
             >
-              Recommend
+              Find a robot
             </button>
           </div>
           ${showResult &&
             html`
-              <div class="row">
-                <div class="col-sm-8">
-                  <div class="card mb-3">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src=${result.img} class="card-img" alt="..." />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">${result.name}</h5>
-                          <p class="card-text">
-                            ${result.description}
-                          </p>
-                          <p class="card-text">${result.features}</p>
-                          <p class="card-text">
-                            Avaialble now for £${result.price} a month through
-                            our subscription service.
-                          </p>
-                          <button
-                            type="button"
-                            class="btn btn-primary btn-lg"
-                            onClick=${() => {
-                              document.getElementById("form01-message").value =
-                                "please hook me up with one of your robots";
+              <div>
+                <div class="recommend">
+                  <p>
+                    We recommend the <strong>${result.name}</strong> robot
+                    vacuum cleaner.
+                  </p>
+                  ${result.handheld &&
+                    html`
+                      <p>
+                        You have told us that your property has stairs.
+                        Unfortunately robot vacuum cleaners cannot yet clean the
+                        stairs.
+                      </p>
+                      <p>
+                        Therefore we also recommend
+                        <strong> ${result.handheld.name}</strong>, a lightweight
+                        handheld vacuum cleaner, which will make vacuuming the
+                        stairs quick and easy.
+                      </p>
+                    `}
+                </div>
 
-                              window.location.href = "#" + "form01";
-                            }}
-                          >
-                            order now
-                          </button>
-                          <p class="card-text">
-                            <small class="text-muted"
-                              >Last updated 3 mins ago</small
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="card mb-3">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img src=${result.img} class="card-img" alt="..." />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">${result.name}</h5>
+                            <p class="card-text">
+                              ${result.description}
+                            </p>
+                            <p class="card-text">${result.features}</p>
+                            <p class="card-text">
+                              Avaialble now for £${result.price} a month through
+                              our subscription service.
+                            </p>
+                            <button
+                              type="button"
+                              class="btn btn-primary btn-lg"
+                              onClick=${() => {
+                                document.getElementById(
+                                  "form01-message"
+                                ).value =
+                                  "please hook me up with one of your robots";
+
+                                window.location.href = "#" + "form01";
+                              }}
                             >
-                          </p>
+                              order now
+                            </button>
+                            <p class="card-text">
+                              <small class="text-muted"
+                                >Last updated 3 mins ago</small
+                              >
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                ${result.handheld &&
-                  html`
-                    <div class="col-sm-4">
-                      <div class="card mb-3">
-                        <div class="row no-gutters">
-                          <div class="col-md-4">
-                            <img
-                              src=${result.handheld.img}
-                              class="card-img"
-                              alt="..."
-                            />
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">
-                                ${result.handheld.name}
-                              </h5>
-                              <p class="card-text">
-                                ${result.description}
-                              </p>
-                              <p class="card-text">
-                                ${result.handheld.features}
-                              </p>
-                              <p class="card-text">
-                                Avaialble now for £${result.handheld.price} a
-                                month through our subscription service.
-                              </p>
-                              <p class="card-text">
-                                <small class="text-muted"
-                                  >Last updated 3 mins ago</small
-                                >
-                              </p>
+                  ${result.handheld &&
+                    html`
+                      <div class="col-sm-4">
+                        <div class="card mb-3">
+                          <div class="row no-gutters">
+                            <div class="col-md-4">
+                              <img
+                                src=${result.handheld.img}
+                                class="card-img"
+                                alt="..."
+                              />
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">
+                                  ${result.handheld.name}
+                                </h5>
+                                <p class="card-text">
+                                  ${result.description}
+                                </p>
+                                <p class="card-text">
+                                  ${result.handheld.features}
+                                </p>
+                                <p class="card-text">
+                                  Avaialble now for £${result.handheld.price} a
+                                  month through our subscription service.
+                                </p>
+                                <p class="card-text">
+                                  <small class="text-muted"
+                                    >Last updated 3 mins ago</small
+                                  >
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  `}
+                    `}
+                </div>
               </div>
             `}
         </div>
