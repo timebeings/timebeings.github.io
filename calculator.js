@@ -23,7 +23,7 @@ export default () => {
       //   "With more surface area for dust to hide, carpets require a more powerful vacuum"
     },
     {
-      type: "Mixture",
+      type: "Carpet and Wood",
       selected: false,
       img: "https://timebeings.github.io/img/mix-floor.png"
       //   "e.g. Wooden floors with rugs or some rooms carpeted and others not"
