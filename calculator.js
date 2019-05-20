@@ -3,7 +3,7 @@
 
 export default () => {
   // Declare a new state variable, which we'll call "count"
-  const [showVacuum, setShowVacuum] = window.React.useState(false);
+  const [showVacuum, setShowVacuum] = window.React.useState(true);
   const [showOther, setShowOther] = window.React.useState(false);
 
   const [floorTypes, setSelectedFloorTypes] = window.React.useState([
